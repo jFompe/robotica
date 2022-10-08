@@ -5,7 +5,7 @@ Coppelia and Rviz docker image definitions with GUI support.
 
 ## Building and running
 
-Make is used to facilitates the process of building and running the services.
+Make is used to facilitate the process of building and running the services.
 
 ### Available services:
 - coppelia
