@@ -1,6 +1,6 @@
 # ROS2 with Docker
 
-Coppelia and Rviz docker image definitions with GUI support.
+Coppelia and Rviz docker images with GUI support.
 
 
 ## Building and running
