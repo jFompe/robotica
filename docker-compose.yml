@@ -1,0 +1,37 @@
+version: '3'
+
+services:
+
+  coppelia:
+    container_name: ros2coppelia
+    image: ros_coppelia
+    build:
+      context: .
+      dockerfile: ./docker/dockerfile_ros_coppelia
+    network_mode: host
+    userns_mode: host
+    environment:
+      - NVIDIA_DRIVER_CAPABILITIES=all
+      - DISPLAY=${DISPLAY}
+      - QT_X11_NO_MITSHM=1
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix:rw
+      - ../scenes:/scenes/:ro
+      - ../models:/models/:ro
+      - ../clients:/clients/:ro
+
+  rviz:
+    container_name: ros2rviz
+    image: ros_rviz
+    build:
+      context: .
+      dockerfile: ./docker/dockerfile_ros_rviz
+    network_mode: host
+    userns_mode: host
+    environment:
+      - NVIDIA_DRIVER_CAPABILITIES=all
+      - DISPLAY=${DISPLAY}
+      - QT_X11_NO_MITSHM=1
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix:rw
+      - ../clients:/clients/:ro
