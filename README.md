@@ -1,6 +1,10 @@
 # ROS2 with Docker
 
-Coppelia and Rviz docker images with GUI support.
+Coppelia and RViz docker images with GUI support.
+
+## Pre-requisites
+
+[Docker](https://docs.docker.com/engine/install/ubuntu/) and the [docker compose plugin](https://docs.docker.com/compose/install/linux/#install-using-the-repository) are needed.
 
 
 ## Building and running
