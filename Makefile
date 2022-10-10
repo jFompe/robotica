@@ -12,10 +12,10 @@
 
 # BUILD
 build-coppelia:
-	@docker-compose build coppelia
+	@docker compose build coppelia
 
 build-rviz:
-	@docker-compose build rviz
+	@docker compose build rviz
 
 build-all: build-coppelia build-rviz
 
