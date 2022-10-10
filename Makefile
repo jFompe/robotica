@@ -11,9 +11,6 @@
 
 
 # BUILD
-build-base:
-	@docker build -f ${BASE_DOCKERFILE} -t nvidia_ros_base .
-
 build-coppelia:
 	@docker-compose build coppelia
 
@@ -29,9 +26,9 @@ base-run:
 	@xhost +local:docker
 
 coppelia: base-run
-	@docker-compose up coppelia
+	@docker compose up coppelia
 
 rviz: base-run
-	@docker-compose up rviz
+	@docker compose up rviz
 
 all: coppelia rviz
