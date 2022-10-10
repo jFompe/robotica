@@ -1,6 +1,6 @@
 # ROS2 with Docker
 
-Coppelia and RViz docker images with GUI support.
+Coppelia and RViz docker images with GUI support. (Tested in Ubuntu 22.04)
 
 ## Pre-requisites
 
