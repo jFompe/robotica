@@ -25,10 +25,5 @@ ENV COPPELIASIM_ROOT_DIR=/opt/$COPPELIA_VERSION
 ENV LD_LIBRARY_PATH=$COPPELIASIM_ROOT_DIR:$LD_LIBRARY_PATH
 ENV PATH=$COPPELIASIM_ROOT_DIR:$PATH
 
-RUN echo "#!/bin/bash" > run_coppelia.sh && \
-    echo "source /opt/ros/humble/setup.bash" >> run_coppelia.sh && \
-    echo "coppeliaSim.sh" >> run_coppelia.sh && \
-    chmod +x run_coppelia.sh
-
-ENTRYPOINT [ "/bin/bash", "-c" ]
-CMD [ "./run_coppelia.sh" ]
+ENTRYPOINT [ "./ros_entrypoint.sh" ]
+CMD [ "coppeliaSim.sh" ]
