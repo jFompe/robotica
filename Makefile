@@ -32,3 +32,12 @@ rviz: base-run
 	@docker compose up rviz
 
 all: coppelia rviz
+
+
+
+# CONNECT TO CONTAINERS
+connect-coppelia:
+	@docker exec -it ros2coppelia bash -c "./ros_entrypoint.sh bash"
+
+connect-rviz:
+	@docker exec -it ros2rviz bash -c "./ros_entrypoint.sh bash"
