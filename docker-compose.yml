@@ -16,9 +16,7 @@ services:
       - QT_X11_NO_MITSHM=1
     volumes:
       - /tmp/.X11-unix:/tmp/.X11-unix:rw
-      - ./scenes:/scenes/:ro
-      - ./models:/models/:ro
-      - ./clients:/clients/:ro
+      - ./coppelia/:/coppelia/:rw
 
   rviz:
     container_name: ros2rviz
@@ -34,6 +32,6 @@ services:
       - QT_X11_NO_MITSHM=1
     volumes:
       - /tmp/.X11-unix:/tmp/.X11-unix:rw
-      - ./clients:/clients/:ro
+      - ./coppelia/:/rviz/coppelia/:rw
       #- ./rosbot_pro.rviz:/root/.rviz2/default.rviz
       #- RMW_IMPLEMENTATION=rmw_fastrtps_cpp
