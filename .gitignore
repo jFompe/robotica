@@ -1,2 +1,4 @@
+.vscode/
 ros_workspace/
 docker/Makefile
+**/rclpy
