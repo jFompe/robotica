@@ -31,6 +31,9 @@ coppelia: base-run
 rviz: base-run
 	@docker compose up rviz
 
+ros2:
+	@docker compose run ros2
+
 all: coppelia rviz
 
 
