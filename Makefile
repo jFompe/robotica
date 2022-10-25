@@ -43,4 +43,4 @@ connect-coppelia:
 	@docker exec -it ros2coppelia bash -c "./ros_entrypoint.sh bash"
 
 connect-rviz:
-	@docker exec -it ros2rviz bash -c "./ros_entrypoint.sh bash"
+	@docker exec -it ros2rviz bash -c "/ros_entrypoint.sh bash"
