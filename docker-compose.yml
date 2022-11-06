@@ -17,6 +17,7 @@ services:
     volumes:
       - /tmp/.X11-unix:/tmp/.X11-unix:rw
       - ./coppelia/:/coppelia/:rw
+      - ./ros2_ws:/ros/ros2_ws/:rw
 
   rviz:
     container_name: ros2rviz
@@ -33,15 +34,18 @@ services:
     volumes:
       - /tmp/.X11-unix:/tmp/.X11-unix:rw
       - ./coppelia/:/rviz/coppelia/:rw
+      - ./ros2_ws:/ros/ros2_ws/:rw
       #- ./rosbot_pro.rviz:/root/.rviz2/default.rviz
       #- RMW_IMPLEMENTATION=rmw_fastrtps_cpp
 
-  ros2:
-    container_name: ros2
-    image: osrf/ros:humble-desktop
+  slam:
+    container_name: ros2slam
+    image: ros_slam
+    build: 
+      context: .
+      dockerfile: ./docker/dockerfile_ros_slam
     network_mode: host
     userns_mode: host
     volumes:
       - /tmp/.X11-unix:/tmp/.X11-unix:rw
-      - ./coppelia/:/ros/coppelia/:rw
       - ./ros2_ws:/ros/ros2_ws/:rw

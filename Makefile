@@ -17,7 +17,10 @@ build-coppelia:
 build-rviz:
 	@docker compose build rviz
 
-build-all: build-coppelia build-rviz
+build-slam:
+	@docker compose build slam
+
+build-all: build-coppelia build-rviz build-slam
 
 
 
@@ -31,10 +34,10 @@ coppelia: base-run
 rviz: base-run
 	@docker compose up rviz
 
-ros2:
-	@docker compose run ros2
+slam:
+	@docker compose up slam
 
-all: coppelia rviz
+all: coppelia rviz slam
 
 
 
@@ -44,3 +47,6 @@ connect-coppelia:
 
 connect-rviz:
 	@docker exec -it ros2rviz bash -c "/ros_entrypoint.sh bash"
+
+connect-slam:
+	@docker exec -it ros2slam bash -c "/ros_entrypoint.sh bash"
