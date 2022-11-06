@@ -27,5 +27,10 @@ cp scripts/src/launch.py $PKG_DIR/launch/$PKG_NAME.launch.py
 mkdir $PKG_DIR/rviz
 cp scripts/src/urdf_config.rviz $PKG_DIR/rviz/urdf_config.rviz
 
+
+# TODO for loop
 mkdir $PKG_DIR/models
 cp scripts/src/models/* $PKG_DIR/models/
+
+mkdir $PKG_DIR/worlds
+cp scripts/src/worlds/* $PKG_DIR/worlds/

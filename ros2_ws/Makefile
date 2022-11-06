@@ -1,6 +1,8 @@
 
 
 
+pkgcreate:
+	@scripts/create_pkg.sh $(PKG_NAME)
 
 wsbuild:
 	@scripts/ws.sh build
@@ -10,3 +12,7 @@ wssource:
 
 wsclean:
 	@rm -rf build install log
+
+
+help:
+	@echo "Options: pkgcreate PKG_NAME - wsbuild - wssource - wsclean"
