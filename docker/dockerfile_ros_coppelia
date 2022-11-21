@@ -9,7 +9,7 @@ ARG DEBIAN_FRONTEND=noninteractive
 
 RUN apt-get update -q && \
     apt-get install -y --no-install-recommends \
-        vim tar xz-utils \
+        vim tar xz-utils xsltproc \
         libx11-6 libxcb1 libxau6 libgl1-mesa-dev \
         xvfb dbus-x11 x11-utils libxkbcommon-x11-0 \
         libavcodec-dev libavformat-dev libswscale-dev
@@ -24,6 +24,10 @@ RUN tar -xf /opt/$COPPELIA_FILENAME -C /opt && \
 ENV COPPELIASIM_ROOT_DIR=/opt/$COPPELIA_VERSION
 ENV LD_LIBRARY_PATH=$COPPELIASIM_ROOT_DIR:$LD_LIBRARY_PATH
 ENV PATH=$COPPELIASIM_ROOT_DIR:$PATH
+
+RUN echo "sensor_msgs/msg/LaserScan" >> /opt/$COPPELIA_VERSION/programming/ros2_packages/sim_ros2_interface/meta/interfaces.txt
+RUN echo "geometry_msgs/msg/Twist" >> /opt/$COPPELIA_VERSION/programming/ros2_packages/sim_ros2_interface/meta/interfaces.txt
+RUN (cd /opt/$COPPELIA_VERSION/programming/ros2_packages/sim_ros2_interface && /ros_entrypoint.sh colcon build --symlink-install)
 
 ENTRYPOINT [ "./ros_entrypoint.sh" ]
 CMD [ "coppeliaSim.sh", "/coppelia/scenes/maze.ttt" ]
