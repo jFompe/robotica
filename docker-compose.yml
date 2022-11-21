@@ -10,6 +10,7 @@ services:
       dockerfile: ./docker/dockerfile_ros_coppelia
     network_mode: host
     userns_mode: host
+    ipc: host
     environment:
       - NVIDIA_DRIVER_CAPABILITIES=all
       - DISPLAY=${DISPLAY}
@@ -27,6 +28,7 @@ services:
       dockerfile: ./docker/dockerfile_ros_rviz
     network_mode: host
     userns_mode: host
+    ipc: host
     environment:
       - NVIDIA_DRIVER_CAPABILITIES=all
       - DISPLAY=${DISPLAY}
@@ -46,6 +48,7 @@ services:
       dockerfile: ./docker/dockerfile_ros_slam
     network_mode: host
     userns_mode: host
+    ipc: host
     volumes:
       - /tmp/.X11-unix:/tmp/.X11-unix:rw
       - ./ros2_ws:/ros/ros2_ws/:rw
