@@ -50,3 +50,9 @@ connect-rviz:
 
 connect-slam:
 	@docker exec -it ros2slam bash -c "/ros_entrypoint.sh bash"
+
+
+
+# UTILS
+tf-graph:
+	@docker exec ros2slam bash -c "cd graphs && /ros_entrypoint.sh ros2 run tf2_tools view_frames"
