@@ -1,0 +1,112 @@
+<?xml version="1.0"?>
+<robot name="PioneerP3DX__158__">
+    <link name="base_link">
+        <collision>
+            <origin xyz="0.000000 0.000000 0.000000" rpy="-3.141593 3.141593 -3.141593" />
+            <geometry>
+                <mesh filename="package://mazebot/models/mazebot_PioneerP3DX__158__.dae" />
+            </geometry>
+        </collision>
+        <visual>
+            <origin xyz="-0.000014 -0.000001 0.000005" rpy="-3.141593 3.141593 -3.141593" />
+            <geometry>
+                <mesh filename="package://mazebot/models/mazebot_visible__171__.dae" />
+            </geometry>
+            <material name="visible__171___material">
+                <color rgba="0.147059 0.147059 0.147059 1.0" />
+            </material>
+        </visual>
+    </link>
+    <link name="rightWheel__160__">
+        <collision>
+            <origin xyz="0.000000 0.000000 0.000000" rpy="-3.141593 3.141593 -3.141593" />
+            <geometry>
+                <cylinder radius="0.048749998211861" length="0.025000000372529" />
+            </geometry>
+        </collision>
+        <visual>
+            <origin xyz="0.000000 -0.000000 0.000000" rpy="-1.570796 3.141592 -3.141247" />
+            <geometry>
+                <mesh filename="package://mazebot/models/mazebot_rightWheel_visible__161__.dae" />
+            </geometry>
+            <material name="rightWheel_visible__161___material">
+                <color rgba="1.000000 0.836592 0.556463 1.0" />
+            </material>
+        </visual>
+    </link>
+    <joint name="rightMotor__159__" type="continuous">
+        <axis xyz="0 0 1" />
+        <parent link="base_link" />
+        <child link="rightWheel__160__" />
+        <origin xyz="0.022257 -0.082751 -0.020637" rpy="1.570796 3.141938 -3.141592" />
+    </joint>
+    <link name="leftWheel__163__">
+        <collision>
+            <origin xyz="0.000000 0.000000 0.000000" rpy="-3.141593 3.141593 -3.141593" />
+            <geometry>
+                <cylinder radius="0.048749998211861" length="0.025000000372529" />
+            </geometry>
+        </collision>
+        <visual>
+            <origin xyz="0.000000 -0.000000 0.000000" rpy="-1.570796 3.141593 -3.141247" />
+            <geometry>
+                <mesh filename="package://mazebot/models/mazebot_leftWheel_visible__164__.dae" />
+            </geometry>
+            <material name="leftWheel_visible__164___material">
+                <color rgba="1.000000 0.836592 0.556463 1.0" />
+            </material>
+        </visual>
+    </link>
+    <joint name="leftMotor__162__" type="continuous">
+        <axis xyz="0 0 1" />
+        <parent link="base_link" />
+        <child link="leftWheel__163__" />
+        <origin xyz="0.022255 0.082750 -0.020626" rpy="1.570796 3.141938 -3.141593" />
+    </joint>
+    <link name="caster_link__166__">
+        <collision>
+            <origin xyz="0.000000 0.000000 0.000000" rpy="-3.141593 3.141593 -3.141593" />
+            <geometry>
+                <cylinder radius="0.0088369632139802" length="0.0014799622585997" />
+            </geometry>
+        </collision>
+        <visual>
+            <origin xyz="0.003717 0.001128 -0.010175" rpy="3.141593 3.141593 -2.847039" />
+            <geometry>
+                <mesh filename="package://mazebot/models/mazebot_caster_link_visible__170__.dae" />
+            </geometry>
+            <material name="caster_link_visible__170___material">
+                <color rgba="1.000000 1.000000 1.000000 1.0" />
+            </material>
+        </visual>
+    </link>
+    <joint name="caster_freeJoint__165__" type="continuous">
+        <axis xyz="0 0 1" />
+        <parent link="base_link" />
+        <child link="caster_link__166__" />
+        <origin xyz="-0.074513 -0.000001 -0.038921" rpy="-3.141492 3.141923 2.847039" />
+    </joint>
+    <link name="caster_wheel__168__">
+        <collision>
+            <origin xyz="0.000000 0.000000 0.000000" rpy="-3.141593 3.141593 -3.141593" />
+            <geometry>
+                <cylinder radius="0.014799509197474" length="0.0025899142492563" />
+            </geometry>
+        </collision>
+        <visual>
+            <origin xyz="0.000000 0.000000 0.000000" rpy="-3.141593 3.141593 -3.141593" />
+            <geometry>
+                <cylinder radius="0.014799509197474" length="0.010359656997025" />
+            </geometry>
+            <material name="caster_wheel_visible__169___material">
+                <color rgba="0.305882 0.305882 0.305882 1.0" />
+            </material>
+        </visual>
+    </link>
+    <joint name="caster_freeJoint__167__" type="continuous">
+        <axis xyz="0 0 1" />
+        <parent link="caster_link__166__" />
+        <child link="caster_wheel__168__" />
+        <origin xyz="0.010622 0.003223 -0.015539" rpy="-1.570796 3.141593 -2.847039" />
+    </joint>
+</robot>
