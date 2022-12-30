@@ -10,6 +10,8 @@ Panels:
         - /TF1
       Splitter Ratio: 0.5
     Tree Height: 557
+  - Class: slam_toolbox::SlamToolboxPlugin
+    Name: SlamToolboxPlugin
 Visualization Manager:
   Class: ""
   Displays:
