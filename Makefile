@@ -34,6 +34,9 @@ coppelia: base-run
 rviz: base-run
 	@docker compose up rviz
 
+nav2:
+	@docker compose up nav2
+
 slam:
 	@docker compose up slam
 
@@ -47,6 +50,9 @@ connect-coppelia:
 
 connect-rviz:
 	@docker exec -it ros2rviz bash -c "/ros_entrypoint.sh bash"
+
+connect-nav2:
+	@docker exec -it ros2nav2 bash -c "/ros_entrypoint.sh bash"
 
 connect-slam:
 	@docker exec -it ros2slam bash -c "/ros_entrypoint.sh bash"
