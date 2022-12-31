@@ -18,7 +18,8 @@ setup(
             glob('models/*')),
         (os.path.join('share', package_name, 'rviz'),
             glob('rviz/*')),
-        
+        (os.path.join('share', package_name, 'config'),
+            glob('config/*')),
     ],
     install_requires=['setuptools'],
     zip_safe=True,
