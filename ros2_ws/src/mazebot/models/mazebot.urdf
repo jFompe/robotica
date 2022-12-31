@@ -34,7 +34,7 @@
             </material>
         </visual>
     </link>
-    <joint name="rightMotor__159__" type="continuous">
+    <joint name="rightMotor" type="continuous">
         <axis xyz="0 0 1" />
         <parent link="base_link" />
         <child link="rightWheel__160__" />
@@ -57,7 +57,7 @@
             </material>
         </visual>
     </link>
-    <joint name="leftMotor__162__" type="continuous">
+    <joint name="leftMotor" type="continuous">
         <axis xyz="0 0 1" />
         <parent link="base_link" />
         <child link="leftWheel__163__" />
@@ -80,7 +80,7 @@
             </material>
         </visual>
     </link>
-    <joint name="caster_freeJoint__165__" type="continuous">
+    <joint name="caster_freeJoint1" type="continuous">
         <axis xyz="0 0 1" />
         <parent link="base_link" />
         <child link="caster_link__166__" />
@@ -103,7 +103,7 @@
             </material>
         </visual>
     </link>
-    <joint name="caster_freeJoint__167__" type="continuous">
+    <joint name="caster_freeJoint2" type="continuous">
         <axis xyz="0 0 1" />
         <parent link="caster_link__166__" />
         <child link="caster_wheel__168__" />
