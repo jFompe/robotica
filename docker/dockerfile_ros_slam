@@ -18,4 +18,4 @@ WORKDIR /ros/ros2_ws
 COPY docker/script_slam.sh /
 
 ENTRYPOINT [ "/ros_entrypoint.sh" ]
-CMD [ "/script_slam.sh" ]
+CMD [ "bash" ]
