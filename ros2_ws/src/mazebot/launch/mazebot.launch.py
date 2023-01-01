@@ -40,7 +40,7 @@ def generate_launch_description():
   
   # Create the launch description and populate
   return LaunchDescription([
+    start_rviz_cmd,
     state,
-    start_rviz_cmd
     # control
   ])
