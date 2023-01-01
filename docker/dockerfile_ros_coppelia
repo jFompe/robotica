@@ -26,9 +26,13 @@ ENV LD_LIBRARY_PATH=$COPPELIASIM_ROOT_DIR:$LD_LIBRARY_PATH
 ENV PATH=$COPPELIASIM_ROOT_DIR:$PATH
 
 RUN echo "sensor_msgs/msg/LaserScan" >> /opt/$COPPELIA_VERSION/programming/ros2_packages/sim_ros2_interface/meta/interfaces.txt
+RUN echo "sensor_msgs/msg/JointState" >> /opt/$COPPELIA_VERSION/programming/ros2_packages/sim_ros2_interface/meta/interfaces.txt
 RUN echo "geometry_msgs/msg/Twist" >> /opt/$COPPELIA_VERSION/programming/ros2_packages/sim_ros2_interface/meta/interfaces.txt
 RUN echo "geometry_msgs/msg/Point" >> /opt/$COPPELIA_VERSION/programming/ros2_packages/sim_ros2_interface/meta/interfaces.txt
-RUN echo "sensor_msgs/msg/JointState" >> /opt/$COPPELIA_VERSION/programming/ros2_packages/sim_ros2_interface/meta/interfaces.txt
+RUN echo "geometry_msgs/msg/Pose" >> /opt/$COPPELIA_VERSION/programming/ros2_packages/sim_ros2_interface/meta/interfaces.txt
+RUN echo "geometry_msgs/msg/PoseWithCovariance" >> /opt/$COPPELIA_VERSION/programming/ros2_packages/sim_ros2_interface/meta/interfaces.txt
+RUN echo "geometry_msgs/msg/TwistWithCovariance" >> /opt/$COPPELIA_VERSION/programming/ros2_packages/sim_ros2_interface/meta/interfaces.txt
+RUN echo "nav_msgs/msg/Odometry" >> /opt/$COPPELIA_VERSION/programming/ros2_packages/sim_ros2_interface/meta/interfaces.txt
 RUN (cd /opt/$COPPELIA_VERSION/programming/ros2_packages/sim_ros2_interface && /ros_entrypoint.sh colcon build --symlink-install)
 
 ENTRYPOINT [ "./ros_entrypoint.sh" ]
