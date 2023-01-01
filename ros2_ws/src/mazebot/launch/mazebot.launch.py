@@ -15,7 +15,7 @@ def generate_launch_description():
 
   # Set the path to different files and folders.
   pkg_share = FindPackageShare(package=PKG_NAME).find(PKG_NAME)
-  rviz_config_file = os.path.join(pkg_share, 'rviz/urdf_config.rviz')
+  rviz_config_file = os.path.join(pkg_share, 'rviz/rviz_config.rviz')
   
   state = IncludeLaunchDescription(
                 PythonLaunchDescriptionSource([os.path.join(

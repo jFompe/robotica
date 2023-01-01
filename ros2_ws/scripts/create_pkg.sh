@@ -25,7 +25,7 @@ mkdir $PKG_DIR/launch
 cp scripts/src/launch.py $PKG_DIR/launch/$PKG_NAME.launch.py
 
 mkdir $PKG_DIR/rviz
-cp scripts/src/urdf_config.rviz $PKG_DIR/rviz/urdf_config.rviz
+cp scripts/src/rviz_config.rviz $PKG_DIR/rviz/rviz_config.rviz
 
 
 # TODO for loop

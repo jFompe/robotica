@@ -13,7 +13,7 @@ def generate_launch_description():
   default_launch_dir = os.path.join(pkg_share, 'launch')
   urdf_model_path = os.path.join(pkg_share, f'models/{PKG_NAME}.urdf')
   robot_name_in_urdf = ROBOT_NAME
-  rviz_config_file = os.path.join(pkg_share, 'rviz/urdf_config.rviz')
+  rviz_config_file = os.path.join(pkg_share, 'rviz/rviz_config.rviz')
   urdf = open(urdf_model_path).read()
 
 
