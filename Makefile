@@ -17,8 +17,8 @@ build-coppelia:
 build-rviz:
 	@docker compose build rviz
 
-build-slam:
-	@docker compose build slam
+build-nav:
+	@docker compose build nav2
 
 build-all: build-coppelia build-rviz build-slam
 
@@ -34,6 +34,7 @@ coppelia: base-run
 rviz: base-run
 	@docker compose up rviz
 
+.PHONY: nav2
 nav2:
 	@docker compose up nav2
 

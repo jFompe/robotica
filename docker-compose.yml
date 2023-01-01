@@ -42,10 +42,10 @@ services:
 
   nav2:
     container_name: ros2nav2
-    image: ros_slam
+    image: ros_nav
     build: 
       context: .
-      dockerfile: ./docker/dockerfile_ros_slam
+      dockerfile: ./docker/dockerfile_ros_nav
     network_mode: host
     userns_mode: host
     ipc: host
@@ -57,10 +57,10 @@ services:
   
   slam:
     container_name: ros2slam
-    image: ros_slam
+    image: ros_nav
     build: 
       context: .
-      dockerfile: ./docker/dockerfile_ros_slam
+      dockerfile: ./docker/dockerfile_ros_nav
     network_mode: host
     userns_mode: host
     ipc: host
