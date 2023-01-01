@@ -53,7 +53,7 @@ services:
       - /tmp/.X11-unix:/tmp/.X11-unix:rw
       - ./ros2_ws:/ros/ros2_ws/:rw
       - ./nav2:/nav2_config:ro
-    command: ros2 launch nav2_bringup navigation_launch.py params_file:=/nav2_config/nav2_costmap2d_params.yaml
+    command: ros2 launch nav2_bringup navigation_launch.py params_file:=/nav2_config/nav2_params.yaml
   
   slam:
     container_name: ros2slam
