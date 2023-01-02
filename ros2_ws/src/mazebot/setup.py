@@ -30,7 +30,7 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-            'mazebot = mazebot.mazebot:main'
+            'navigator = mazebot.mazebot_nav:main'
         ],
     },
 )

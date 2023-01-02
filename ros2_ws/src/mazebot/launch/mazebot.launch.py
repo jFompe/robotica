@@ -29,6 +29,11 @@ def generate_launch_description():
                 )]), launch_arguments={'use_sim_time': 'true', 'use_ros2_control': 'true'}.items()
     )
 
+  navigator = IncludeLaunchDescription(
+                PythonLaunchDescriptionSource([os.path.join(
+                    get_package_share_directory(PKG_NAME), 'launch', 'navigator.launch.py'
+                )])
+  )
 
   # Launch RViz
   start_rviz_cmd = Node(
@@ -42,5 +47,6 @@ def generate_launch_description():
   return LaunchDescription([
     start_rviz_cmd,
     state,
+    navigator,
     # control
   ])
