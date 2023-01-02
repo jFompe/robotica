@@ -68,4 +68,4 @@ services:
       - /tmp/.X11-unix:/tmp/.X11-unix:rw
       - ./ros2_ws:/ros/ros2_ws/:rw
       - ./nav2:/nav2_config:ro
-    command: ros2 launch slam_toolbox online_async_launch.py slam_params_file:=/nav2_config/mapper_params_online_async.yaml
+    command: ros2 launch slam_toolbox online_async_launch.py slam_params_file:=/nav2_config/slam_params.yaml
