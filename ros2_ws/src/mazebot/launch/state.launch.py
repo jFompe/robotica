@@ -28,6 +28,7 @@ def generate_launch_description():
     name='joint_state_publisher',
     package='joint_state_publisher',
     executable='joint_state_publisher',
+    parameters=[{'use_sim_time': False}],
     arguments=[urdf_model_path])
 
   return LaunchDescription([
