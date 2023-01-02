@@ -56,4 +56,5 @@ class MazeNavigator(BasicNavigator):
 
   def goal_pose_callback(self, msg):
     self.get_logger().info('Received pose message: {msg}')
-    self.goToPose(msg)
+    self.goToPose(msg.pose)
+    self.get_logger().info('Mazebot ordered to go to goal pose')
