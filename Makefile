@@ -62,4 +62,4 @@ connect-slam:
 
 # UTILS
 tf-graph:
-	@docker exec ros2slam bash -c "cd graphs && /ros_entrypoint.sh ros2 run tf2_tools view_frames"
+	@docker exec ros2slam bash -c "cd /ros/ros2_ws/graphs && /ros_entrypoint.sh ros2 run tf2_tools view_frames"
