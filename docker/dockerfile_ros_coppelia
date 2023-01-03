@@ -33,6 +33,7 @@ RUN echo "geometry_msgs/msg/Pose" >> /opt/$COPPELIA_VERSION/programming/ros2_pac
 RUN echo "geometry_msgs/msg/PoseStamped" >> /opt/$COPPELIA_VERSION/programming/ros2_packages/sim_ros2_interface/meta/interfaces.txt
 RUN echo "geometry_msgs/msg/PoseWithCovariance" >> /opt/$COPPELIA_VERSION/programming/ros2_packages/sim_ros2_interface/meta/interfaces.txt
 RUN echo "geometry_msgs/msg/TwistWithCovariance" >> /opt/$COPPELIA_VERSION/programming/ros2_packages/sim_ros2_interface/meta/interfaces.txt
+RUN echo "geometry_msgs/msg/PoseWithCovarianceStamped" >> /opt/$COPPELIA_VERSION/programming/ros2_packages/sim_ros2_interface/meta/interfaces.txt
 RUN echo "nav_msgs/msg/Odometry" >> /opt/$COPPELIA_VERSION/programming/ros2_packages/sim_ros2_interface/meta/interfaces.txt
 RUN echo "rosgraph_msgs/msg/Clock" >> /opt/$COPPELIA_VERSION/programming/ros2_packages/sim_ros2_interface/meta/interfaces.txt
 RUN (cd /opt/$COPPELIA_VERSION/programming/ros2_packages/sim_ros2_interface && /ros_entrypoint.sh colcon build --symlink-install)
