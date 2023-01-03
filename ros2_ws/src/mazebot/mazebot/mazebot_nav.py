@@ -14,6 +14,8 @@ def main():
 
   navigator.waitUntilNav2Active()
 
+  nav_start = navigator.get_clock().now()
+
   while not navigator.isNavComplete():
 
     feedback = navigator.getFeedback()
@@ -56,5 +58,5 @@ class MazeNavigator(BasicNavigator):
 
   def goal_pose_callback(self, msg):
     self.get_logger().info('Received pose message: {msg}')
-    self.goToPose(msg.pose)
+    self.goToPose(msg)
     self.get_logger().info('Mazebot ordered to go to goal pose')
