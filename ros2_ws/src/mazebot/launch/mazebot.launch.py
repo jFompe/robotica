@@ -17,7 +17,8 @@ def generate_launch_description():
 
   # Set the path to different files and folders.
   pkg_share = FindPackageShare(package=PKG_NAME).find(PKG_NAME)
-  rviz_config_file = os.path.join(pkg_share, 'rviz/rviz_config.rviz')
+  #rviz_config_file = os.path.join(pkg_share, 'rviz/rviz_config.rviz')
+  rviz_config_file = '/ros/ros2_ws/src/mazebot/rviz/rviz_config.rviz'
 
   use_sim_time = LaunchConfiguration('use_sim_time')
   use_sim_time_arg = DeclareLaunchArgument(
