@@ -14,6 +14,8 @@ Make is used to facilitate the process of building and running the services.
 ### Available services:
 - coppelia
 - rviz
+- nav2
+- slam
 
 ### Build
 
@@ -23,4 +25,19 @@ Make is used to facilitate the process of building and running the services.
 
 ### Run
 
-- Each service in a separate terminal: `make {service}`. For example: `make rviz`
+- Each service in a separate terminal: `make {service}`.
+
+```bash
+make coppelia
+make rviz
+make nav2
+make slam
+```
+
+Then run the simulation in Coppelia to start sending laser data.
+
+Finally, send the goal pose:
+
+```bash
+make start-goal
+```
