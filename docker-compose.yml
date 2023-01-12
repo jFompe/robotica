@@ -37,8 +37,6 @@ services:
       - /tmp/.X11-unix:/tmp/.X11-unix:rw
       - ./coppelia/:/rviz/coppelia/:rw
       - ./ros2_ws:/ros/ros2_ws/:rw
-      #- ./rosbot_pro.rviz:/root/.rviz2/default.rviz
-      #- RMW_IMPLEMENTATION=rmw_fastrtps_cpp
 
   nav2:
     container_name: ros2nav2
@@ -51,7 +49,6 @@ services:
     ipc: host
     volumes:
       - /tmp/.X11-unix:/tmp/.X11-unix:rw
-      - ./ros2_ws:/ros/ros2_ws/:rw
       - ./nav2:/nav2_config:ro
     command: ros2 launch nav2_bringup navigation_launch.py params_file:=/nav2_config/nav2_params.yaml
   
@@ -66,6 +63,5 @@ services:
     ipc: host
     volumes:
       - /tmp/.X11-unix:/tmp/.X11-unix:rw
-      - ./ros2_ws:/ros/ros2_ws/:rw
       - ./nav2:/nav2_config:ro
     command: ros2 launch slam_toolbox online_async_launch.py slam_params_file:=/nav2_config/slam_params.yaml
