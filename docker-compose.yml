@@ -18,9 +18,7 @@ services:
     volumes:
       - /tmp/.X11-unix:/tmp/.X11-unix:rw
       - ./coppelia/:/coppelia/:rw
-      - ./ros2_ws:/ros/ros2_ws/:rw
-      # TODO Remove
-      - ./ros_workspace:/ros/ros_workspace/:rw
+    command: coppeliaSim.sh /coppelia/scenes/maze_simple.ttt
 
   rviz:
     container_name: ros2rviz
