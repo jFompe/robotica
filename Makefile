@@ -17,10 +17,13 @@ build-coppelia:
 build-rviz:
 	@docker compose build rviz
 
-build-nav:
+build-nav2:
 	@docker compose build nav2
 
-build-all: build-coppelia build-rviz build-slam
+build-slam:
+	@docker compose build slam
+
+build-all: build-coppelia build-rviz build-nav2 build-slam
 
 
 
